@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    container_name: cityfix-backend
+    restart: unless-stopped
+    volumes:
+      - backend-data:/app
+    expose:
+      - "5000"
+
+  frontend:
+    build: ./frontend
+    container_name: cityfix-frontend
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+
+volumes:
+  backend-data:

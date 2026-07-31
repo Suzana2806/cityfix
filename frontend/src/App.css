@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f5f7; font-family: system-ui, -apple-system, sans-serif; }
+.app { max-width: 720px; margin: 0 auto; padding: 24px 16px 60px; }
+header { text-align: center; margin-bottom: 24px; }
+header h1 { margin: 0; font-size: 28px; }
+header p { color: #666; margin: 4px 0 0; }
+
+.issue-form { display: flex; flex-direction: column; gap: 8px; background: white; padding: 16px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 16px; }
+.issue-form input, .issue-form select { padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+.issue-form button { background: #2563eb; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.issue-form button:hover { background: #1d4ed8; }
+
+.controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 14px; }
+.controls select { padding: 6px; border-radius: 6px; border: 1px solid #ddd; }
+
+.empty { text-align: center; color: #888; }
+
+.issue-list { display: flex; flex-direction: column; gap: 12px; }
+.issue-card { background: white; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 5px solid #999; }
+.issue-card.status-open { border-left-color: #ef4444; }
+.issue-card.status-acknowledged { border-left-color: #f59e0b; }
+.issue-card.status-in-progress { border-left-color: #3b82f6; }
+.issue-card.status-resolved { border-left-color: #22c55e; }
+
+.issue-top { display: flex; justify-content: space-between; align-items: center; }
+.issue-top h3 { margin: 0; font-size: 16px; }
+.upvote-btn { background: #eef2ff; border: 1px solid #c7d2fe; color: #4338ca; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-weight: 600; }
+.upvote-btn:hover { background: #e0e7ff; }
+
+.issue-meta { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.tag { background: #f1f5f9; padding: 3px 8px; border-radius: 12px; font-size: 12px; color: #475569; }
+.issue-meta select { padding: 4px; border-radius: 6px; border: 1px solid #ddd; font-size: 13px; }
+.delete-btn { margin-left: auto; background: none; border: none; cursor: pointer; font-size: 15px; }
