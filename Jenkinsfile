@@ -2,35 +2,38 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
-                checkout scm
+                echo 'Code checked out by Jenkins'
             }
         }
 
-        stage('Build Docker Images') {
+        stage('Build Images') {
             steps {
                 bat 'docker compose build'
             }
         }
 
-        stage('Deploy Application') {
+        stage('Deploy') {
             steps {
                 bat 'docker compose down'
                 bat 'docker compose up -d'
             }
         }
 
+        stage('Verify') {
+            steps {
+                bat 'docker ps'
+            }
+        }
     }
 
     post {
         success {
             echo 'CityFix deployed successfully!'
         }
-
         failure {
-            echo 'Deployment failed!'
+            echo 'Pipeline failed - check the logs above.'
         }
     }
 }
