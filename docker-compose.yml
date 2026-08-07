@@ -1,7 +1,6 @@
 services:
   backend:
     build: ./backend
-    container_name: cityfix-backend
     restart: unless-stopped
     volumes:
       - backend-data:/app
@@ -10,10 +9,9 @@ services:
 
   frontend:
     build: ./frontend
-    container_name: cityfix-frontend
     restart: unless-stopped
     ports:
-      - "8081:80"
+      - "9090:80"
     depends_on:
       - backend
 
